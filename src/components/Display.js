@@ -20,16 +20,11 @@ class Display extends React.Component {
             margin: '10px'
         }
 
-
-
-
         return (
-            <div style={style}>
+            <div style={style} >
                 <p style={inputStyle}>{this.props.state.input === null ? 0 : this.props.state.input}</p>
             </div>
         )
     }
-
-
 }
 export default Display

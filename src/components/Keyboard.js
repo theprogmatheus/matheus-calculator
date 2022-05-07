@@ -3,9 +3,6 @@ import Button from './Button.js'
 
 class Keyboard extends React.Component {
 
-
-
-
     createButton(display, backgroundColor, action = () => { this.props.functions.input(display) }) {
         return {
             display: display,
@@ -14,12 +11,10 @@ class Keyboard extends React.Component {
         }
     }
 
-
     render() {
 
-
-
         const style = {}
+
         return (
             <div className='keyboard' style={style}>
 
@@ -46,14 +41,14 @@ class Keyboard extends React.Component {
                 <Button button={this.createButton('4', '#1f1f1f')} />
                 <Button button={this.createButton('5', '#1f1f1f')} />
                 <Button button={this.createButton('6', '#1f1f1f')} />
-                <Button button={this.createButton('X')} />
+                <Button button={this.createButton('*')} />
 
                 <Button button={this.createButton('1', '#1f1f1f')} />
                 <Button button={this.createButton('2', '#1f1f1f')} />
                 <Button button={this.createButton('3', '#1f1f1f')} />
                 <Button button={this.createButton('+')} />
 
-                <Button button={this.createButton(',')} />
+                <Button button={this.createButton('.')} />
                 <Button button={this.createButton('0', '#1f1f1f')} />
                 <Button button={this.createButton('=', null, ()=>{
                     this.props.functions.calculate()
@@ -62,7 +57,6 @@ class Keyboard extends React.Component {
             </div>
         )
     }
-
 }
 
 export default Keyboard

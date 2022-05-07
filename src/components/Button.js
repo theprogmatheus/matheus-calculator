@@ -4,7 +4,6 @@ import React from 'react'
 class Button extends React.Component {
 
     render() {
-
         const style = {
             width: '25%',
             height: '65px',

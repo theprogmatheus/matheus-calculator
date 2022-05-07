@@ -1,6 +1,13 @@
 import React from 'react';
 import Display from './Display.js'
 import Keyboard from './Keyboard.js'
+import { create, all } from 'mathjs'
+
+const config = {}
+const math = create(all, config)
+
+const allowedKeys = ['+', '-', '/', '*', '.', ',', '%', '(', ')', '[', ']'];
+
 
 class Calculator extends React.Component {
 
@@ -11,23 +18,48 @@ class Calculator extends React.Component {
             input: null,
             history: null
         };
+        this.onKeyEvent = this.onKeyEvent.bind(this);
     }
+
+    onKeyEvent(event) {
+        switch (event.key) {
+
+            case 'Escape':
+                this.clearHistory();
+                this.clearInput();
+                break;
+
+            case 'Enter':
+            case '=':
+                this.calculate();
+                break;
+
+            case 'Backspace':
+            case 'Delete':
+                this.backSpace();
+                break;
+
+            default:
+                if (!isNaN(event.key) || allowedKeys.includes(event.key))
+                    this.input(event.key.replace(",", "."));
+                break;
+        }
+    }
+
+
 
     input = (input) => {
         this.setState({
-            input: this.state.input === null ? input : this.state.input + input
+            input: this.state.input === null ? input : this.state.input + input + ''
         })
     }
 
     backSpace = () => {
         if (!(this.state.input === null)) {
-
-
             let newInput = this.state.input.substring(0, this.state.input.length - 1);
 
             if (newInput.length === 0)
                 newInput = null;
-
 
             this.setState({
                 input: newInput
@@ -36,7 +68,7 @@ class Calculator extends React.Component {
     }
 
     calculate = () => {
-
+        this.setState({ input: (math.evaluate(this.state.input) + '') })
     }
 
     clearInput = () => {
@@ -45,6 +77,14 @@ class Calculator extends React.Component {
 
     clearHistory = () => {
         this.setState({ history: null })
+    }
+
+    componentDidMount() {
+        document.addEventListener("keydown", this.onKeyEvent, false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("keydown", this.onKeyEvent, false);
     }
 
     render() {
@@ -62,7 +102,7 @@ class Calculator extends React.Component {
         }
 
         return (
-            <div onKeyDown={() => { console.log('1') }} className='calculator' style={style}>
+            <div className='calculator' style={style}  >
                 <Display state={this.state} />
                 <Keyboard state={this.state} functions={{
 
@@ -75,9 +115,7 @@ class Calculator extends React.Component {
                 }} />
             </div>
         )
-
     }
-
 }
 
 export default Calculator
