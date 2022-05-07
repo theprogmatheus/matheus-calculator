@@ -17,5 +17,5 @@ It was a very good experience, I think it evolves a little... but I need to evol
 
 See you in the next project :)
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/prints/Screenshot_1.png?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/prints/running.gif?raw=true)
+![alt text](https://github.com/theprogmatheus/matheus-calculator/blob/master/prints/Screenshot_1.png?raw=true)
+![alt text](https://github.com/theprogmatheus/matheus-calculator/blob/master/prints/running.gif?raw=true)
