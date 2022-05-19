@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/matheus-calculator/static/css/main.627be227.css",
+    "main.js": "/matheus-calculator/static/js/main.85319a0f.js",
+    "index.html": "/matheus-calculator/index.html",
+    "main.627be227.css.map": "/matheus-calculator/static/css/main.627be227.css.map",
+    "main.85319a0f.js.map": "/matheus-calculator/static/js/main.85319a0f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.627be227.css",
+    "static/js/main.85319a0f.js"
+  ]
+}
