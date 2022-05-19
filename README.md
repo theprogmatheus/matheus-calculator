@@ -2,7 +2,7 @@
 
 ## My first react app, a simple calculator.
 
-This application has hosted on (https://theprogmatheus.github.io/matheus-calculator/)
+This application was hosted at (https://theprogmatheus.github.io/matheus-calculator/)
 
 This application uses a library called 'mathjs' (https://mathjs.org/)
 
